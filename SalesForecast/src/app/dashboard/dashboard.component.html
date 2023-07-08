@@ -1,0 +1,80 @@
+<app-navbar></app-navbar>
+  <section class="register-block">
+            <div class="container">
+               <div class="row ">
+                  <div class="col register-sec">
+                     <h2 class="text-center">Sales Prediction</h2>
+                     <form class="register-form" #f="ngForm" (ngSubmit)="onSubmit()" [formGroup]="predictForm" >
+                      <div class="form-group">
+                        <div class="col-md-12">
+                        <label for="exampleInputEmail1" class="text-uppercase">Dataset</label>
+                        <br>
+                        <input
+                             type="file"
+                            accept=".csv"
+                            class="form-control"
+                            ngModeL
+                           required>
+                        </div>
+
+
+
+
+                       <div id="dropdown">
+                    <label for="period">PERIOD</label>
+
+                     <select   required
+                  id="period"
+                  class="form-control"
+                  name="period"
+                  formControlName="period"
+                               required>
+                         <option name="month">Monthly</option>
+                          <option name="year">Yearly</option>
+
+                             </select>
+                            <span
+                  class="text-danger"
+                  *ngIf="
+                    submit &&
+                    predictForm.controls['period'].errors &&
+                    predictForm.controls['period'].errors['required']
+                  "
+                >
+                  periodicity is required
+                </span>
+                         </div>
+                     <div class="form-group">
+                        <label  class="text-uppercase">Numeric Data</label>
+                      <input
+                  required
+                  type="number"
+                  class="form-control"
+                  id="numeric"
+                  name="numeric"
+                  formControlName="numeric"
+                />
+                <span
+                  class="text-danger"
+                  *ngIf="
+                    submit &&
+                    predictForm.controls['numeric'].errors &&
+                    predictForm.controls['numeric'].errors['required']
+                  "
+                >
+                  numerical value is required
+                </span>
+                      <br>
+                     </div>
+                        <input type="submit" class="btn btn-login float-right"  href="javascript:void(0);"   value="Proceed"  [disabled]="f.invalid" >
+                      </div>
+                     </form>
+
+
+                  </div>
+
+               </div>
+
+            </div>
+
+          </section>

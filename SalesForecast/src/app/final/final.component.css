@@ -1,0 +1,17 @@
+
+.container
+{    
+    /* margin :6px;
+    padding:8px; */
+    background:#d3d3d3b6;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px #423f3f;
+    width:100%;
+    
+}
+.mn{
+   
+    margin:0;
+    padding-bottom: 60px;
+
+}
